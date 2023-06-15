@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/usense-test/static/css/main.5d4c55a7.css",
-    "main.js": "/usense-test/static/js/main.67b720ea.js",
+    "main.js": "/usense-test/static/js/main.1a800e69.js",
     "index.html": "/usense-test/index.html",
     "main.5d4c55a7.css.map": "/usense-test/static/css/main.5d4c55a7.css.map",
-    "main.67b720ea.js.map": "/usense-test/static/js/main.67b720ea.js.map"
+    "main.1a800e69.js.map": "/usense-test/static/js/main.1a800e69.js.map"
   },
   "entrypoints": [
     "static/css/main.5d4c55a7.css",
-    "static/js/main.67b720ea.js"
+    "static/js/main.1a800e69.js"
   ]
 }
