@@ -17,7 +17,7 @@ export const PassDifficultyScale = ({ password }) => {
   const lettersSymbols = `^(?=.*[a-zA-Z])(?=.*[!@#$%^&*()_+-=;':"\\|,.<>/?]).+$`;
   const lettersDigits = `^(?=.*[a-zA-Z])(?=.*d).+$`;
   const digitsSymbols = `^(?=.*d)(?=.*[!@#$%^&*()_+-=[]{};':"\\|,.<>/?]).+$`;
-  const all = `^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$`;
+  const all = `^(?=.*[a-z])(?=.*[A-Z])(?=.*d)(?=.*[@$!%*?&])[A-Za-zd@$!%*?&]{8,}$`;
 
   const onPasswordChange = password => {
     if (password.length === 0) {
