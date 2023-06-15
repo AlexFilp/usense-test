@@ -40,7 +40,7 @@ export const ItemMedium = styled.li`
   }
 `;
 
-export const ItemHard = styled.li`
+export const ItemStrong = styled.li`
   width: 100px;
   height: 15px;
   background-color: green;

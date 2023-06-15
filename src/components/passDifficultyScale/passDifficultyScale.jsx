@@ -4,7 +4,7 @@ import {
   ItemAllRed,
   ItemEasy,
   ItemMedium,
-  ItemHard,
+  ItemStrong,
 } from './passDifficultyScale.styled';
 import { useEffect, useState } from 'react';
 
@@ -17,7 +17,7 @@ export const PassDifficultyScale = ({ password }) => {
   const lettersSymbols = `^(?=.*[a-zA-Z])(?=.*[!@#$%^&*()_+-=;':"\\|,.<>/?]).+$`;
   const lettersDigits = `^(?=.*[a-zA-Z])(?=.*d).+$`;
   const digitsSymbols = `^(?=.*d)(?=.*[!@#$%^&*()_+-=[]{};':"\\|,.<>/?]).+$`;
-  const lettersSymbolsDigits = `^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$`;
+  const all = `^(?=.*[a-zA-Z])(?=.*d)(?=.*[!@#$%^&*()_+-=[]{};':"\\|,.<>/?])[a-zA-Zd!@#$%^&*()_+-=[]{};':"\\|,.<>/?]+$`;
 
   const onPasswordChange = password => {
     if (password.length === 0) {
@@ -32,12 +32,12 @@ export const PassDifficultyScale = ({ password }) => {
     ) {
       setPassState('easy');
     } else if (
-      password.match(lettersSymbols) ||
+      password.match(digitsSymbols) ||
       password.match(lettersDigits) ||
-      password.match(digitsSymbols)
+      password.match(lettersSymbols)
     ) {
       setPassState('medium');
-    } else if (password.match(lettersSymbolsDigits)) {
+    } else if (password.match(all)) {
       setPassState('strong');
     }
   };
@@ -79,9 +79,9 @@ export const PassDifficultyScale = ({ password }) => {
       )}
       {passState === 'strong' && (
         <List>
-          <ItemHard></ItemHard>
-          <ItemHard></ItemHard>
-          <ItemHard></ItemHard>
+          <ItemStrong></ItemStrong>
+          <ItemStrong></ItemStrong>
+          <ItemStrong></ItemStrong>
         </List>
       )}
     </>

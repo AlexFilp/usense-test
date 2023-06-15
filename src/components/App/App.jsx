@@ -13,7 +13,7 @@ export const App = () => {
 
   return (
     <Container>
-      <Title>Lets check your password strenth!</Title>
+      <Title>Lets check your password strength!</Title>
       <PasswordInput onChange={onChange} />
       <PassDifficultyScale password={query} />
       <GlobalStyle />

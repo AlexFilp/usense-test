@@ -21,6 +21,7 @@ export const Button = styled.button`
   background-color: transparent;
   border: none;
   position: absolute;
-  top: 10px;
+  top: 50%;
   right: 5px;
+  transform: translateY(-50%);
 `;
