@@ -17,7 +17,7 @@ export const PassDifficultyScale = ({ password }) => {
   const lettersSymbols = `^(?=.*[a-zA-Z])(?=.*[!@#$%^&*()_+-=;':"\\|,.<>/?]).+$`;
   const lettersDigits = `^(?=.*[a-zA-Z])(?=.*d).+$`;
   const digitsSymbols = `^(?=.*d)(?=.*[!@#$%^&*()_+-=[]{};':"\\|,.<>/?]).+$`;
-  const all = `^(?=.*[a-zA-Z])(?=.*d)(?=.*[!@#$%^&*()_+-=[]{};':"\\|,.<>/?])[a-zA-Zd!@#$%^&*()_+-=[]{};':"\\|,.<>/?]+$`;
+  const all = `^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$`;
 
   const onPasswordChange = password => {
     if (password.length === 0) {
@@ -44,6 +44,7 @@ export const PassDifficultyScale = ({ password }) => {
 
   useEffect(() => {
     onPasswordChange(password);
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [password]);
 
