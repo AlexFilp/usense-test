@@ -20,10 +20,7 @@ export const PassDifficultyScale = ({ password }) => {
   const digitsSymbols = /^(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/;
   const all = /^(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/;
 
-  // console.log(digitsSymbols.test('2312132#@@#@@#@#!@!'), 'digitsSymbols');
-
   const onPasswordChange = password => {
-    console.log(all.test(password));
     if (password.length === 0) {
       setPassState('gray');
       return;
