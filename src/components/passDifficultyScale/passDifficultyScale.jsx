@@ -1,11 +1,4 @@
-import {
-  List,
-  ItemAllGray,
-  ItemAllRed,
-  ItemEasy,
-  ItemMedium,
-  ItemStrong,
-} from './passDifficultyScale.styled';
+import { List, Item } from './passDifficultyScale.styled';
 import { useEffect, useState } from 'react';
 
 export const PassDifficultyScale = ({ password }) => {
@@ -14,10 +7,9 @@ export const PassDifficultyScale = ({ password }) => {
   const onlyLetters = /^[a-zA-Z]+$/;
   const onlyDigits = /^[0-9]+$/;
   const onlySymbols = /^[!@#$%^&*()_+-=;':"\\|,.<>/?]+$/;
-  const lettersSymbols =
-    /^(?=.*[a-zA-Z])(?=.*[!@#$%^&*()_+-=;':"\\|,.<>/?]).+$/;
-  const lettersDigits = /^(?=.*[a-zA-Z])(?=.*d).+$/;
-  const digitsSymbols = /^(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/;
+  const lettersSymbols = /^(?=.*[a-zA-Z])(?=.*[\W_]).+$/;
+  const lettersDigits = /^(?=.*[a-zA-Z])(?=.*\d).+$/;
+  const digitsSymbols = /^(?=.*\d)(?=.*[\W_]).+$/;
   const all = /^(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/;
 
   const onPasswordChange = password => {
@@ -51,41 +43,11 @@ export const PassDifficultyScale = ({ password }) => {
 
   return (
     <>
-      {passState === 'gray' && (
-        <List>
-          <ItemAllGray></ItemAllGray>
-          <ItemAllGray></ItemAllGray>
-          <ItemAllGray></ItemAllGray>
-        </List>
-      )}
-      {passState === 'red' && (
-        <List>
-          <ItemAllRed></ItemAllRed>
-          <ItemAllRed></ItemAllRed>
-          <ItemAllRed></ItemAllRed>
-        </List>
-      )}
-      {passState === 'easy' && (
-        <List>
-          <ItemEasy></ItemEasy>
-          <ItemEasy></ItemEasy>
-          <ItemEasy></ItemEasy>
-        </List>
-      )}
-      {passState === 'medium' && (
-        <List>
-          <ItemMedium></ItemMedium>
-          <ItemMedium></ItemMedium>
-          <ItemMedium></ItemMedium>
-        </List>
-      )}
-      {passState === 'strong' && (
-        <List>
-          <ItemStrong></ItemStrong>
-          <ItemStrong></ItemStrong>
-          <ItemStrong></ItemStrong>
-        </List>
-      )}
+      <List>
+        <Item state={passState}></Item>
+        <Item state={passState}></Item>
+        <Item state={passState}></Item>
+      </List>
     </>
   );
 };

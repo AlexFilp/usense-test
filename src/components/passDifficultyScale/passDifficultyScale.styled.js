@@ -5,43 +5,20 @@ export const List = styled.ul`
   gap: 10px;
 `;
 
-export const ItemAllGray = styled.li`
+export const Item = styled.li`
   width: 100px;
   height: 15px;
-  background-color: lightgray;
-`;
-
-export const ItemAllRed = styled.li`
-  width: 100px;
-  height: 15px;
-  background-color: red;
-`;
-
-export const ItemEasy = styled.li`
-  width: 100px;
-  height: 15px;
-  background-color: lightgray;
+  background-color: ${({ state }) =>
+    state === 'red' ? 'red' : state === 'strong' ? 'green' : 'lightgray'};
 
   &:first-child {
-    background-color: red;
+    background-color: ${({ state }) => state === 'easy' && 'red'};
   }
-`;
-
-export const ItemMedium = styled.li`
-  width: 100px;
-  height: 15px;
-  background-color: lightgray;
 
   &:nth-child(1) {
-    background-color: orange;
+    background-color: ${({ state }) => state === 'medium' && 'orange'};
   }
   &:nth-child(2) {
-    background-color: orange;
+    background-color: ${({ state }) => state === 'medium' && 'orange'};
   }
-`;
-
-export const ItemStrong = styled.li`
-  width: 100px;
-  height: 15px;
-  background-color: green;
 `;
